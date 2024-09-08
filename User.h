@@ -5,7 +5,7 @@
 // ofstream - для записи в файлы
 // fstream - запись и считывание данных
 
-constexpr auto userData = "-";
+constexpr auto userData = "/home/amalya/MyProject_Linux/userData.txt";
 
 class User
 {

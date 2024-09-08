@@ -25,9 +25,4 @@ cout << "Name:" << user.getName() << endl;
 cout << "Login:" << user.getLogin() << endl;
 cout << "Password:" << user.getPassword() << endl;
 
-
-
-
-
-
 }

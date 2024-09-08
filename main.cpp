@@ -12,9 +12,9 @@ cout << "Name:" << user.getName() << endl;
 cout << "Login:" << user.getLogin() << endl;
 cout << "Password:" << user.getPassword() << endl;
 
-string newName = "Ivan";
-string newLogin = "vanya";
-string newPassword  = "ivan123";
+string newName = "Vasiliy";
+string newLogin = "vasya";
+string newPassword  = "vasya123";
 
 user.setName(newName);
 user.setLogin(newLogin);

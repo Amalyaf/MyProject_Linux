@@ -36,9 +36,12 @@ void User::setPassword(std::string password) {
 
 void User::readUser() {
 
-	std::fstream file (userData, std::ios::in);
+	std::fstream file (userData, std::ios::in | std::ios::trunc);
 	if (!file) 
+	{
+		std::cout<<"Not file"<< std::endl;
 		file = std::fstream(userData, std::ios::in | std::ios::out | std::ios::trunc);
+	}
 	auto permissions = std::filesystem::perms::group_all |  // права, которые хотим отобрать 
 		std::filesystem::perms::others_all; 
 	std::filesystem::permissions (userData, permissions, std::filesystem::perm_options::remove);
@@ -66,13 +69,9 @@ void User::readUser() {
 				else if (title == "Password") {
 					_password = value;
 				}			
-
 			}
-		
 		}
-	
 	}
-
 	file.close();
 }
 

@@ -10,6 +10,7 @@ constexpr auto userData = "/home/amalya/MyProject_Linux/userData.txt";
 class User
 {
 public:
+	User();
 	User(std::string name, std::string login, std::string password);
 	~User();
 	void readUser();

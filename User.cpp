@@ -1,8 +1,15 @@
 #include "User.h"
 #include <filesystem>
 
+int my_count = 0;
+int my_count_read = 0;
+
+User::User() {
+	readUser();
+}
+
 User::User(std::string name, std::string login, std::string password): _name(name), _login(login), _password(password) {
-readUser();
+
 }
 
 User::~User() {
@@ -35,8 +42,12 @@ void User::setPassword(std::string password) {
 
 
 void User::readUser() {
+	my_count_read++;
 
-	std::fstream file (userData, std::ios::in | std::ios::trunc);
+	std::fstream file = std::fstream(userData, std::ios::in);
+	if (my_count_read == 1){
+		file.seekg(0, std::ios_base::beg);
+	}
 	if (!file) 
 	{
 		std::cout<<"Not file"<< std::endl;
@@ -76,7 +87,13 @@ void User::readUser() {
 }
 
 void User::writeUser() const {
+	my_count++;
 	std::fstream file (userData, std::ios::out);
+
+	if (my_count == 1) {
+		std::fstream file = std::fstream(userData, std::ios::out | std::ios::trunc);
+	}
+
 	file << "Name:" << _name << "\n";
 	file << "Login:" << _login << "\n";
 	file << "Password:" << _password << "\n";

@@ -88,12 +88,11 @@ void User::readUser() {
 
 void User::writeUser() const {
 	my_count++;
-	std::fstream file (userData, std::ios::out);
-
+	std::fstream file (userData, std::ios::out | std::ios::app);
 	if (my_count == 1) {
 		std::fstream file = std::fstream(userData, std::ios::out | std::ios::trunc);
 	}
-
+	
 	file << "Name:" << _name << "\n";
 	file << "Login:" << _login << "\n";
 	file << "Password:" << _password << "\n";

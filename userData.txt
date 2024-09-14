@@ -1,9 +1,0 @@
-Name:Anna
-Login:anna
-Password:anna123
-Name:Vanya
-Login:vanyaa
-Password:vanya123
-Name:Anna
-Login:anna
-Password:anna123

@@ -1,6 +1,7 @@
 #pragma once
 #include <fstream> // Для работы с файлом, как с потоком
 #include <iostream>
+
 // ifstream - для чтения данных из файла
 // ofstream - для записи в файлы
 // fstream - запись и считывание данных
@@ -21,8 +22,6 @@ public:
 	void setName(std::string name);
 	void setLogin(std::string login);
 	void setPassword(std::string password);
-	friend std::fstream& operator >>(std::fstream& is, User& obj);
-	friend std::ostream& operator <<(std::ostream& os, const User& obj);
 private:
 	std::string _name;
 	std::string _login;
